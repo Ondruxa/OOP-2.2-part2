@@ -1,4 +1,4 @@
-public class Truck extends Machine{
+public class Truck extends EngineMachine {
 
     public void updateTyre() {
         System.out.println("Меняем покрышку");
@@ -8,18 +8,13 @@ public class Truck extends Machine{
         super(modelName, wheelsCount);
     }
 
-    public String getModelName() {
-        return modelName;
-    }
+    @Override
+    public void service() {
+        super.service();
+        super.checkEngine();
+        checkTrailer();
 
-    public int getWheelsCount() {
-        return wheelsCount;
     }
-
-    public void checkEngine() {
-        System.out.println("Проверяем двигатель");
-    }
-
     public void checkTrailer() {
         System.out.println("Проверяем прицеп");
     }
